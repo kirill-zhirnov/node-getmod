@@ -33,3 +33,8 @@ assert.strictEqual (mod.resolve ("util"), "util");
 var mod1Path = __dirname + "/a/b/c/mod1.js".replace (/\//g, path.sep);
 assert.strictEqual (mod.resolve ("mod1"), mod1Path);
 assert.strictEqual (mod.resolve ("./a/b/c/mod1"), mod1Path);
+
+//Resolve for folders will throw an error: mod.resolve ("f")
+//use getPath for it:
+var fPath = __dirname + "/d/e/f";
+assert.strictEqual (mod.getPath ("f"), fPath);
