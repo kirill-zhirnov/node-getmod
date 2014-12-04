@@ -37,4 +37,4 @@ assert.strictEqual (mod.resolve ("./a/b/c/mod1"), mod1Path);
 //Resolve for folders will throw an error: mod.resolve ("f")
 //use getPath for it:
 var fPath = __dirname + "/d/e/f";
-assert.strictEqual (mod.getPath ("f"), fPath);
+assert.strictEqual (mod.resolveDir ("f"), fPath);
